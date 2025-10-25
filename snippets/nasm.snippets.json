@@ -1,0 +1,61 @@
+{
+	"label": {
+		"prefix": "label",
+		"body": [
+			"${1:name}:\t${2}\t${3}"
+		],
+		"description": "Adds a new label"
+  	},
+	"entry": {
+		"prefix": "entry",
+		"body": [
+			"\tglobal\t_start",
+			"",
+			"\tsection\t.text",
+			"_start\t${1}"
+		],
+		"description": "Writes the Entrypoint for the program"
+	},
+	".data": {
+		"prefix": ".data",
+		"body": [
+			"\tsection\t.data",
+			"${1:name}\t${2}\t${3}\t; ${4:comment}"
+		],
+		"description": "Initializes the Data Section and a variable with a comment"
+	},
+	"variable": {
+		"prefix": "var",
+		"body": [
+			"${1:name}\t${2}\t${3}\t; ${4:comment}"
+		],
+		"description": "Initializes a variable with a comment"
+	},
+	"constant": {
+		"prefix": "const",
+		"body": [
+			"${1:name}\tequ\t${3}\t; ${4:comment:nah}"
+		],
+		"description": "Initializes a constant with a comment"
+	},
+	"hello world": {
+		"prefix": "hello",
+		"body": [
+			"\tglobal\t_start",
+			"",
+			"\tsection\t.text",
+			"_start:\tmov\trax, 1",
+			"\tmov\trdi, 1",
+			"\tmov\trsi, message",
+			"\tmov\trdx, 13",
+			"\tsyscall",
+			"\tmov\trax, 60",
+			"\txor\trdi, rdi",
+			"\tsyscall",
+			"",
+			"\tsection\t.data",
+			"message\tdb\t\"Hello world!\", 10"
+		],
+		"description": "Writes a program that prints out \"Hello world!\""
+	}
+}

@@ -1,0 +1,39 @@
+{
+    // Symbols used as comments
+    "comments": { "lineComment": ";", },
+    // Symbols used as brackets
+    "brackets": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"]
+    ],
+    // Symbols that are auto closed when typing
+    "autoClosingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"]
+    ],
+    // Symbols that can be used to surround a selection
+    "surroundingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"]
+    ],
+    // What has to be in order for the line to be indented or outdented
+    "onEnterRules": [
+        {
+            "beforeText": "^\\s*[A-Za-z_.$][\\w.$]*\\s*:\\s*.*$",
+            "action": { "indent": "indent" }
+        },
+    ],
+    // Symbols that can have a color
+    "colorizedBracketPairs": [
+        [ "(", ")" ],
+        [ "[", "]" ],
+        [ "{", "}" ]
+    ]
+}

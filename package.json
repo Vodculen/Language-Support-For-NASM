@@ -1,0 +1,64 @@
+{
+	"name": "language-support-for-nasm",
+	"displayName": "Language Support for NASM",
+	"description": "Adds refactoring, Intellisense, and formatting for NASM",
+	"author": { "name": "Vodculen" },
+	"version": "0.0.1",
+	"engines": { "vscode": "^1.105.0" },
+	"categories": [
+		"Programming Languages", 
+		"Linters", 
+		"Formatters", 
+		"Snippets"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "nasm",
+				"aliases": [
+					"NASM",
+					"nasm"
+				],
+				"extensions": [
+					".nasm",
+					".asm",
+					".s"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "nasm",
+				"scopeName": "source.nasm",
+				"path": "./syntaxes/nasm.syntaxes.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "nasm",
+				"path": "./snippets/nasm.snippets.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.105.0",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "22.x",
+		"@typescript-eslint/eslint-plugin": "^8.45.0",
+		"@typescript-eslint/parser": "^8.45.0",
+		"eslint": "^9.36.0",
+		"typescript": "^5.9.3",
+		"@vscode/test-cli": "^0.0.11",
+		"@vscode/test-electron": "^2.5.2"
+	}
+}
